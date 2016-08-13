@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sgx_tsqlite", "sgx_tsqlite\sgx_tsqlite.vcxproj", "{30E75FBA-156F-4D79-8953-6765F5C83E00}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sgx_usqlite", "sgx_usqlite\sgx_usqlite.vcxproj", "{84D91392-FAB3-47BF-A68A-DD986E369D36}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "application", "application\application.vcxproj", "{DBF3D6C5-3109-4BF3-A340-64F030E9E308}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Prerelease|Win32 = Prerelease|Win32
+		Release|Win32 = Release|Win32
+		Simulation|Win32 = Simulation|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30E75FBA-156F-4D79-8953-6765F5C83E00}.Debug|Win32.ActiveCfg = Debug|Win32
+		{30E75FBA-156F-4D79-8953-6765F5C83E00}.Debug|Win32.Build.0 = Debug|Win32
+		{30E75FBA-156F-4D79-8953-6765F5C83E00}.Prerelease|Win32.ActiveCfg = Prerelease|Win32
+		{30E75FBA-156F-4D79-8953-6765F5C83E00}.Prerelease|Win32.Build.0 = Prerelease|Win32
+		{30E75FBA-156F-4D79-8953-6765F5C83E00}.Release|Win32.ActiveCfg = Release|Win32
+		{30E75FBA-156F-4D79-8953-6765F5C83E00}.Release|Win32.Build.0 = Release|Win32
+		{30E75FBA-156F-4D79-8953-6765F5C83E00}.Simulation|Win32.ActiveCfg = Simulation|Win32
+		{30E75FBA-156F-4D79-8953-6765F5C83E00}.Simulation|Win32.Build.0 = Simulation|Win32
+		{84D91392-FAB3-47BF-A68A-DD986E369D36}.Debug|Win32.ActiveCfg = Debug|Win32
+		{84D91392-FAB3-47BF-A68A-DD986E369D36}.Debug|Win32.Build.0 = Debug|Win32
+		{84D91392-FAB3-47BF-A68A-DD986E369D36}.Prerelease|Win32.ActiveCfg = Release|Win32
+		{84D91392-FAB3-47BF-A68A-DD986E369D36}.Prerelease|Win32.Build.0 = Release|Win32
+		{84D91392-FAB3-47BF-A68A-DD986E369D36}.Release|Win32.ActiveCfg = Release|Win32
+		{84D91392-FAB3-47BF-A68A-DD986E369D36}.Release|Win32.Build.0 = Release|Win32
+		{84D91392-FAB3-47BF-A68A-DD986E369D36}.Simulation|Win32.ActiveCfg = Release|Win32
+		{84D91392-FAB3-47BF-A68A-DD986E369D36}.Simulation|Win32.Build.0 = Release|Win32
+		{DBF3D6C5-3109-4BF3-A340-64F030E9E308}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DBF3D6C5-3109-4BF3-A340-64F030E9E308}.Debug|Win32.Build.0 = Debug|Win32
+		{DBF3D6C5-3109-4BF3-A340-64F030E9E308}.Prerelease|Win32.ActiveCfg = Prerelease|Win32
+		{DBF3D6C5-3109-4BF3-A340-64F030E9E308}.Prerelease|Win32.Build.0 = Prerelease|Win32
+		{DBF3D6C5-3109-4BF3-A340-64F030E9E308}.Release|Win32.ActiveCfg = Release|Win32
+		{DBF3D6C5-3109-4BF3-A340-64F030E9E308}.Release|Win32.Build.0 = Release|Win32
+		{DBF3D6C5-3109-4BF3-A340-64F030E9E308}.Simulation|Win32.ActiveCfg = Simulation|Win32
+		{DBF3D6C5-3109-4BF3-A340-64F030E9E308}.Simulation|Win32.Build.0 = Simulation|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

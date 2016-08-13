@@ -1,0 +1,247 @@
+﻿Build started 4/14/2016 2:40:02 AM.
+     1>Project "C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\sgx_tsqlite\sgx_tsqlite.vcxproj" on node 2 (Rebuild target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(345,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+     1>CustomBuild:
+         Creating proxy/bridge routines
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include" /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include\tlibc" /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include\stlport" /Ic:\dev\src\icu\include /Zi /nologo /W3 /WX- /O2 /Oy- /D _WINDLL /D _WINDLL /D SQLITE_DISABLE_INTRINSIC /D SQLITE_CORE /D SQLITE_ENABLE_COLUMN_METADATA /D SQLITE_ENABLE_FTS5 /D SQLITE_ENABLE_RTREE /D SQLITE_WITHOUT_MSIZE /D __BUILDING_STLPORT /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Prerelease\\" /Fd"Prerelease\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt alter.c analyze.c attach.c auth.c backup.c bitvec.c btmutex.c btree.c build.c callback.c complete.c ctime.c date.c dbstat.c delete.c expr.c fault.c fkey.c fts1.c fts1_hash.c fts1_porter.c fts1_tokenizer1.c fts2.c fts2_hash.c fts2_icu.c fts2_porter.c fts2_tokenizer.c fts2_tokenizer1.c fts3.c fts3_aux.c fts3_expr.c fts3_hash.c fts3_icu.c fts3_porter.c fts3_snippet.c fts3_tokenizer.c fts3_tokenizer1.c fts3_tokenize_vtab.c fts3_unicode.c fts3_unicode2.c fts3_write.c fts5.c func.c global.c hash.c icu.c insert.c journal.c json1.c legacy.c loadext.c main.c malloc.c mem0.c mem1.c mem2.c mem3.c mem5.c memjournal.c mutex.c mutex_noop.c mutex_w32.c notify.c opcodes.c pager.c parse.c pcache.c pcache1.c pragma.c prepare.c printf.c random.c resolve.c rowset.c rtree.c select.c sgx_tsqlite_t.c sizeUtil.c sqlite3rbu.c status.c table.c tokenize.c treeview.c trigger.c update.c userauth.c utf.c util.c vacuum.c vdbe.c vdbeapi.c vdbeaux.c vdbeblob.c vdbemem.c vdbesort.c vdbetrace.c vtab.c wal.c walker.c where.c wherecode.c whereexpr.c
+         alter.c
+         analyze.c
+         attach.c
+         auth.c
+         backup.c
+         bitvec.c
+         btmutex.c
+         btree.c
+     1>btree.c(2208): warning C4013: 'sqlite3OsFullPathname' undefined; assuming extern returning int
+         build.c
+         callback.c
+         complete.c
+         ctime.c
+         date.c
+     1>date.c(463): warning C4013: 'ocall_localtime' undefined; assuming extern returning int
+         dbstat.c
+         delete.c
+         expr.c
+         fault.c
+         fkey.c
+         fts1.c
+         fts1_hash.c
+         Generating Code...
+         Compiling...
+         fts1_porter.c
+         fts1_tokenizer1.c
+         fts2.c
+         fts2_hash.c
+         fts2_icu.c
+         fts2_porter.c
+         fts2_tokenizer.c
+         fts2_tokenizer1.c
+         fts3.c
+         fts3_aux.c
+         fts3_expr.c
+         fts3_hash.c
+         fts3_icu.c
+         fts3_porter.c
+         fts3_snippet.c
+         fts3_tokenizer.c
+         fts3_tokenizer1.c
+         fts3_tokenize_vtab.c
+         fts3_unicode.c
+         fts3_unicode2.c
+         Generating Code...
+         Compiling...
+         fts3_write.c
+         fts5.c
+     1>fts5Int.h(33): warning C4005: 'ArraySize' : macro redefinition
+                 c:\users\praveen\documents\visual studio 2012\projects\sgx_tsqlite\sgx_tsqlite\sqliteInt.h(876) : see previous definition of 'ArraySize'
+     1>fts5Int.h(36): warning C4005: 'ALWAYS' : macro redefinition
+                 c:\users\praveen\documents\visual studio 2012\projects\sgx_tsqlite\sgx_tsqlite\sqliteInt.h(401) : see previous definition of 'ALWAYS'
+     1>fts5Int.h(37): warning C4005: 'NEVER' : macro redefinition
+                 c:\users\praveen\documents\visual studio 2012\projects\sgx_tsqlite\sgx_tsqlite\sqliteInt.h(402) : see previous definition of 'NEVER'
+     1>fts5Int.h(39): warning C4005: 'MIN' : macro redefinition
+                 c:\users\praveen\documents\visual studio 2012\projects\sgx_tsqlite\sgx_tsqlite\sqliteInt.h(571) : see previous definition of 'MIN'
+     1>fts5Int.h(40): warning C4005: 'MAX' : macro redefinition
+                 c:\users\praveen\documents\visual studio 2012\projects\sgx_tsqlite\sgx_tsqlite\sqliteInt.h(572) : see previous definition of 'MAX'
+         func.c
+         global.c
+         hash.c
+         icu.c
+         insert.c
+         journal.c
+         json1.c
+         legacy.c
+         loadext.c
+         main.c
+     1>main.c(2174): warning C4090: 'return' : different 'const' qualifiers
+         malloc.c
+         mem0.c
+         mem1.c
+         mem2.c
+         mem3.c
+         mem5.c
+         memjournal.c
+         mutex.c
+         Generating Code...
+         Compiling...
+         mutex_noop.c
+         mutex_w32.c
+         notify.c
+         opcodes.c
+         pager.c
+         parse.c
+         pcache.c
+         pcache1.c
+         pragma.c
+         prepare.c
+         printf.c
+         random.c
+         resolve.c
+         rowset.c
+         rtree.c
+         select.c
+         sgx_tsqlite_t.c
+     1>sgx_tsqlite_t.c(1196): warning C4133: 'function' : incompatible types - from 'char *' to 'const wchar_t *'
+         sizeUtil.c
+         sqlite3rbu.c
+         status.c
+         Generating Code...
+         Compiling...
+         table.c
+         tokenize.c
+         treeview.c
+         trigger.c
+         update.c
+         userauth.c
+         utf.c
+         util.c
+         vacuum.c
+         vdbe.c
+         vdbeapi.c
+     1>vdbeapi.c(1008): warning C4090: 'return' : different 'const' qualifiers
+         vdbeaux.c
+         vdbeblob.c
+         vdbemem.c
+         vdbesort.c
+         vdbetrace.c
+         vtab.c
+         wal.c
+         walker.c
+         where.c
+         Generating Code...
+         Compiling...
+         wherecode.c
+         whereexpr.c
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include" /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include\tlibc" /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include\stlport" /Ic:\dev\src\icu\include /Zi /nologo /W3 /WX- /O2 /Oy- /D _WINDLL /D _WINDLL /D SQLITE_DISABLE_INTRINSIC /D SQLITE_CORE /D SQLITE_ENABLE_COLUMN_METADATA /D SQLITE_ENABLE_FTS5 /D SQLITE_ENABLE_RTREE /D SQLITE_WITHOUT_MSIZE /D __BUILDING_STLPORT /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Prerelease\\" /Fd"Prerelease\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt sgx_tsqlite.cpp
+         sgx_tsqlite.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\Prerelease\sgx_tsqlite.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files (x86)\Intel\IntelSGXSDK\bin\Win32\Prerelease" /LIBPATH:c:\dev\src\build\lib sgx_trts.lib sgx_tstdc.lib sgx_tservice.lib sgx_tcrypto_opt.lib sgx_tstdcxx.lib icuuc.lib icuin.lib /NODEFAULTLIB /DEF:"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\\sgx_tsqlite\sqlite3.def" /MANIFEST:NO /PDB:"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\Prerelease\sgx_tsqlite.pdb" /OPT:REF /OPT:ICF /TLBID:1 /NOENTRY /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\dev\src\build\lib\sgx_tsqlite.lib" /MACHINE:X86 /SAFESEH /DLL Prerelease\alter.obj
+         Prerelease\analyze.obj
+         Prerelease\attach.obj
+         Prerelease\auth.obj
+         Prerelease\backup.obj
+         Prerelease\bitvec.obj
+         Prerelease\btmutex.obj
+         Prerelease\btree.obj
+         Prerelease\build.obj
+         Prerelease\callback.obj
+         Prerelease\complete.obj
+         Prerelease\ctime.obj
+         Prerelease\date.obj
+         Prerelease\dbstat.obj
+         Prerelease\delete.obj
+         Prerelease\expr.obj
+         Prerelease\fault.obj
+         Prerelease\fkey.obj
+         Prerelease\fts1.obj
+         Prerelease\fts1_hash.obj
+         Prerelease\fts1_porter.obj
+         Prerelease\fts1_tokenizer1.obj
+         Prerelease\fts2.obj
+         Prerelease\fts2_hash.obj
+         Prerelease\fts2_icu.obj
+         Prerelease\fts2_porter.obj
+         Prerelease\fts2_tokenizer.obj
+         Prerelease\fts2_tokenizer1.obj
+         Prerelease\fts3.obj
+         Prerelease\fts3_aux.obj
+         Prerelease\fts3_expr.obj
+         Prerelease\fts3_hash.obj
+         Prerelease\fts3_icu.obj
+         Prerelease\fts3_porter.obj
+         Prerelease\fts3_snippet.obj
+         Prerelease\fts3_tokenizer.obj
+         Prerelease\fts3_tokenizer1.obj
+         Prerelease\fts3_tokenize_vtab.obj
+         Prerelease\fts3_unicode.obj
+         Prerelease\fts3_unicode2.obj
+         Prerelease\fts3_write.obj
+         Prerelease\fts5.obj
+         Prerelease\func.obj
+         Prerelease\global.obj
+         Prerelease\hash.obj
+         Prerelease\icu.obj
+         Prerelease\insert.obj
+         Prerelease\journal.obj
+         Prerelease\json1.obj
+         Prerelease\legacy.obj
+         Prerelease\loadext.obj
+         Prerelease\main.obj
+         Prerelease\malloc.obj
+         Prerelease\mem0.obj
+         Prerelease\mem1.obj
+         Prerelease\mem2.obj
+         Prerelease\mem3.obj
+         Prerelease\mem5.obj
+         Prerelease\memjournal.obj
+         Prerelease\mutex.obj
+         Prerelease\mutex_noop.obj
+         Prerelease\mutex_w32.obj
+         Prerelease\notify.obj
+         Prerelease\opcodes.obj
+         Prerelease\pager.obj
+         Prerelease\parse.obj
+         Prerelease\pcache.obj
+         Prerelease\pcache1.obj
+         Prerelease\pragma.obj
+         Prerelease\prepare.obj
+         Prerelease\printf.obj
+         Prerelease\random.obj
+         Prerelease\resolve.obj
+         Prerelease\rowset.obj
+         Prerelease\rtree.obj
+         Prerelease\select.obj
+         Prerelease\sgx_tsqlite.obj
+         Prerelease\sgx_tsqlite_t.obj
+         Prerelease\sizeUtil.obj
+         Prerelease\sqlite3rbu.obj
+         Prerelease\status.obj
+         Prerelease\table.obj
+         Prerelease\tokenize.obj
+         Prerelease\treeview.obj
+         Prerelease\trigger.obj
+         Prerelease\update.obj
+         Prerelease\userauth.obj
+         Prerelease\utf.obj
+         Prerelease\util.obj
+         Prerelease\vacuum.obj
+         Prerelease\vdbe.obj
+         Prerelease\vdbeapi.obj
+         Prerelease\vdbeaux.obj
+         Prerelease\vdbeblob.obj
+         Prerelease\vdbemem.obj
+         Prerelease\vdbesort.obj
+         Prerelease\vdbetrace.obj
+         Prerelease\vtab.obj
+         Prerelease\wal.obj
+         Prerelease\walker.obj
+         Prerelease\where.obj
+         Prerelease\wherecode.obj
+         Prerelease\whereexpr.obj
+     1>LINK : fatal error LNK1181: cannot open input file 'sgx_trts.lib'
+     1>Done Building Project "C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\sgx_tsqlite\sgx_tsqlite.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:09.26

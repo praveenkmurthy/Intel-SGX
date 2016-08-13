@@ -1,0 +1,20 @@
+﻿Build started 4/14/2016 3:08:42 PM.
+     1>Project "C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\application\application.vcxproj" on node 2 (Rebuild target(s)).
+     1>CustomBuild:
+         Creating untrusted proxy/bridge routines
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Intel\IntelSGXSDK\\include" /I"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\\application" /I"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\\sgx_tsqlite\\" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\..\..\..\..\Temp\application\main.cpp
+         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Intel\IntelSGXSDK\\include" /I"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\\application" /I"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\\sgx_tsqlite\\" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt sgx_tsqlite_u.c
+         sgx_tsqlite_u.c
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\Release\application.exe" /NOLOGO /LIBPATH:"C:\Program Files (x86)\Intel\IntelSGXSDK\\bin\Win32\Release" /LIBPATH:"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\Release\\" sgx_urts.lib sgx_uae_service.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib sgx_usqlite.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\Release\application.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\Release\application.lib" /MACHINE:X86 /SAFESEH Release\main.obj
+         Release\sgx_tsqlite_u.obj
+         Generating code
+         Finished generating code
+         application.vcxproj -> C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\Release\application.exe
+     1>Done Building Project "C:\Users\praveen\Documents\Visual Studio 2012\Projects\sgx_tsqlite\application\application.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.20

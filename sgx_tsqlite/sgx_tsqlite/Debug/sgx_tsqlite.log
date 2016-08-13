@@ -1,0 +1,133 @@
+﻿Build started 4/25/2016 12:00:26 AM.
+     1>Project "C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\sgx_tsqlite\sgx_tsqlite.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(345,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include" /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include\tlibc" /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include\stlport" /Ic:\dev\src\icu\include /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDLL /D _WINDLL /D SQLITE_DISABLE_INTRINSIC /D SQLITE_CORE /D SQLITE_ENABLE_COLUMN_METADATA /D SQLITE_ENABLE_FTS5 /D SQLITE_ENABLE_RTREE /D SQLITE_WITHOUT_MSIZE /D __BUILDING_STLPORT /D SQLITE_OMIT_LOCALTIME /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt tokenize.c
+         tokenize.c
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\Debug\sgx_tsqlite.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files (x86)\Intel\IntelSGXSDK\bin\Win32\Debug" /LIBPATH:c:\dev\src\build\lib sgx_trts.lib sgx_tstdc.lib sgx_tservice.lib sgx_tcrypto_opt.lib sgx_tstdcxx.lib icuuc.lib icuin.lib /NODEFAULTLIB /DEF:"C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\\sgx_tsqlite\sqlite3.def" /MANIFEST:NO /DEBUG /PDB:"C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\Debug\sgx_tsqlite.pdb" /TLBID:1 /NOENTRY /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\dev\src\build\lib\sgx_tsqlite.lib" /MACHINE:X86 /SAFESEH /DLL Debug\alter.obj
+         Debug\analyze.obj
+         Debug\attach.obj
+         Debug\auth.obj
+         Debug\backup.obj
+         Debug\bitvec.obj
+         Debug\btmutex.obj
+         Debug\btree.obj
+         Debug\build.obj
+         Debug\callback.obj
+         Debug\complete.obj
+         Debug\ctime.obj
+         Debug\date.obj
+         Debug\dbstat.obj
+         Debug\delete.obj
+         Debug\expr.obj
+         Debug\fault.obj
+         Debug\fkey.obj
+         Debug\fts1.obj
+         Debug\fts1_hash.obj
+         Debug\fts1_porter.obj
+         Debug\fts1_tokenizer1.obj
+         Debug\fts2.obj
+         Debug\fts2_hash.obj
+         Debug\fts2_icu.obj
+         Debug\fts2_porter.obj
+         Debug\fts2_tokenizer.obj
+         Debug\fts2_tokenizer1.obj
+         Debug\fts3.obj
+         Debug\fts3_aux.obj
+         Debug\fts3_expr.obj
+         Debug\fts3_hash.obj
+         Debug\fts3_icu.obj
+         Debug\fts3_porter.obj
+         Debug\fts3_snippet.obj
+         Debug\fts3_tokenizer.obj
+         Debug\fts3_tokenizer1.obj
+         Debug\fts3_tokenize_vtab.obj
+         Debug\fts3_unicode.obj
+         Debug\fts3_unicode2.obj
+         Debug\fts3_write.obj
+         Debug\fts5.obj
+         Debug\func.obj
+         Debug\global.obj
+         Debug\hash.obj
+         Debug\icu.obj
+         Debug\insert.obj
+         Debug\journal.obj
+         Debug\json1.obj
+         Debug\legacy.obj
+         Debug\loadext.obj
+         Debug\main.obj
+         Debug\malloc.obj
+         Debug\mem0.obj
+         Debug\mem1.obj
+         Debug\mem2.obj
+         Debug\mem3.obj
+         Debug\mem5.obj
+         Debug\memjournal.obj
+         Debug\mutex.obj
+         Debug\mutex_noop.obj
+         Debug\mutex_w32.obj
+         Debug\notify.obj
+         Debug\opcodes.obj
+         Debug\pager.obj
+         Debug\parse.obj
+         Debug\pcache.obj
+         Debug\pcache1.obj
+         Debug\pragma.obj
+         Debug\prepare.obj
+         Debug\printf.obj
+         Debug\random.obj
+         Debug\resolve.obj
+         Debug\rowset.obj
+         Debug\rtree.obj
+         Debug\select.obj
+         Debug\sgx_tsqlite.obj
+         Debug\sgx_tsqlite_t.obj
+         Debug\sizeUtil.obj
+         Debug\sqlite3rbu.obj
+         Debug\status.obj
+         Debug\table.obj
+         Debug\tokenize.obj
+         Debug\treeview.obj
+         Debug\trigger.obj
+         Debug\update.obj
+         Debug\userauth.obj
+         Debug\utf.obj
+         Debug\util.obj
+         Debug\vacuum.obj
+         Debug\vdbe.obj
+         Debug\vdbeapi.obj
+         Debug\vdbeaux.obj
+         Debug\vdbeblob.obj
+         Debug\vdbemem.obj
+         Debug\vdbesort.obj
+         Debug\vdbetrace.obj
+         Debug\vtab.obj
+         Debug\wal.obj
+         Debug\walker.obj
+         Debug\where.obj
+         Debug\wherecode.obj
+         Debug\whereexpr.obj
+            Creating library c:\dev\src\build\lib\sgx_tsqlite.lib and object c:\dev\src\build\lib\sgx_tsqlite.exp
+         sgx_tsqlite.vcxproj -> C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\Debug\sgx_tsqlite.dll
+       PostBuildEvent:
+         "C:\Program Files (x86)\Intel\IntelSGXSDK\bin\win32\release\sgx_sign.exe" sign -key "C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\sgx_tsqlite\sgx_tsqlite_private.pem" -enclave "C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\Debug\sgx_tsqlite.dll" -out "C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\Debug\sgx_tsqlite.signed.dll" -config "C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\sgx_tsqlite\sgx_tsqlite.config.xml"
+         :VCEnd
+         The required memory is 0x354000.
+         Succeed.
+         <EnclaveConfiguration>
+             <ProdID>0</ProdID>
+             <ISVSVN>0</ISVSVN>
+             <StackMaxSize>0x40000</StackMaxSize>
+             <HeapMaxSize>0x100000</HeapMaxSize>
+             <TCSNum>5</TCSNum>
+             <TCSPolicy>1</TCSPolicy>
+             <DisableDebug>0</DisableDebug>
+             <MiscSelect>0</MiscSelect>
+             <MiscMask>0xFFFFFFFF</MiscMask>
+         </EnclaveConfiguration>
+     1>Done Building Project "C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\sgx_tsqlite\sgx_tsqlite.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.09

@@ -1,0 +1,42 @@
+﻿Build started 4/24/2016 11:50:40 PM.
+     1>Project "C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\sgx_usqlite\sgx_usqlite.vcxproj" on node 4 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /D SQLITE_CORE /D SQLITE_OMIT_AUTOINIT /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt global.c malloc.c mem1.c mutex.c mutex_noop.c mutex_w32.c myfunc.c os.c os_win.c printf.c random.c rowset.c threads.c utf.c util.c
+         util.c
+         utf.c
+         threads.c
+         rowset.c
+         random.c
+         printf.c
+         os_win.c
+         os.c
+         myfunc.c
+         mutex_w32.c
+         mutex_noop.c
+         mutex.c
+         mem1.c
+         malloc.c
+         global.c
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\Debug\sgx_usqlite.lib" /NOLOGO Debug\global.obj
+         Debug\malloc.obj
+         Debug\mem1.obj
+         Debug\mutex.obj
+         Debug\mutex_noop.obj
+         Debug\mutex_w32.obj
+         Debug\myfunc.obj
+         Debug\os.obj
+         Debug\os_win.obj
+         Debug\printf.obj
+         Debug\random.obj
+         Debug\rowset.obj
+         Debug\threads.obj
+         Debug\utf.obj
+         Debug\util.obj
+         sgx_usqlite.vcxproj -> C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\Debug\sgx_usqlite.lib
+     1>Done Building Project "C:\Users\praveen\documents\visual studio 2012\Projects\sgx_tsqlite\sgx_usqlite\sgx_usqlite.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.17

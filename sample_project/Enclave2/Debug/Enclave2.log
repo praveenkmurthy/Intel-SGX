@@ -1,0 +1,35 @@
+﻿Build started 4/25/2016 12:18:43 AM.
+     1>Project "C:\CloudSec\development\sample_project\Enclave2\Enclave2.vcxproj" on node 2 (Build target(s)).
+     1>CustomBuild:
+         Creating proxy/bridge routines
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include" /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include\tlibc" /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include\stlport" /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDLL /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Enclave2.cpp
+         Enclave2.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include" /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include\tlibc" /I"C:\Program Files (x86)\Intel\IntelSGXSDK\include\stlport" /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDLL /Gm- /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Enclave2_t.c
+         Enclave2_t.c
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\CloudSec\development\sample_project\Debug\Enclave2.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files (x86)\Intel\IntelSGXSDK\bin\Win32\Debug" sgx_trts.lib sgx_tstdc.lib sgx_tservice.lib sgx_tcrypto_opt.lib sgx_tstdcxx.lib /NODEFAULTLIB /MANIFEST:NO /DEBUG /PDB:"C:\CloudSec\development\sample_project\Debug\Enclave2.pdb" /TLBID:1 /NOENTRY /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\CloudSec\development\sample_project\Debug\Enclave2.lib" /MACHINE:X86 /SAFESEH /DLL Debug\Enclave2.obj
+         Debug\Enclave2_t.obj
+            Creating library C:\CloudSec\development\sample_project\Debug\Enclave2.lib and object C:\CloudSec\development\sample_project\Debug\Enclave2.exp
+         Enclave2.vcxproj -> C:\CloudSec\development\sample_project\Debug\Enclave2.dll
+       PostBuildEvent:
+         "C:\Program Files (x86)\Intel\IntelSGXSDK\bin\win32\release\sgx_sign.exe" sign -key "C:\CloudSec\development\sample_project\Enclave2\Enclave2_private.pem" -enclave "C:\CloudSec\development\sample_project\Debug\Enclave2.dll" -out "C:\CloudSec\development\sample_project\Debug\Enclave2.signed.dll" -config "C:\CloudSec\development\sample_project\Enclave2\Enclave2.config.xml"
+         :VCEnd
+         The required memory is 0x2c000.
+         Succeed.
+         <EnclaveConfiguration>
+             <ProdID>0</ProdID>
+             <ISVSVN>0</ISVSVN>
+             <StackMaxSize>0x1000</StackMaxSize>
+             <HeapMaxSize>0x10000</HeapMaxSize>
+             <TCSNum>1</TCSNum>
+             <TCSPolicy>1</TCSPolicy>
+             <DisableDebug>0</DisableDebug>
+             <MiscSelect>0</MiscSelect>
+             <MiscMask>0xFFFFFFFF</MiscMask>
+         </EnclaveConfiguration>
+     1>Done Building Project "C:\CloudSec\development\sample_project\Enclave2\Enclave2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.24

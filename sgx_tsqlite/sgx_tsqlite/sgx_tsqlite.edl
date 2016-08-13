@@ -1,0 +1,303 @@
+enclave {
+
+	include "sqliteInt.h"
+	include "time.h"
+	
+	from "sgx_tstdc.edl" import sgx_thread_wait_untrusted_event_ocall, sgx_thread_set_untrusted_event_ocall, sgx_thread_setwait_untrusted_events_ocall, sgx_thread_set_multiple_untrusted_events_ocall;
+
+	/* A running thread */
+	struct SQLiteThread {
+		void *tid;               /* The thread handle */
+		unsigned id;             /* The thread identifier */
+		void *pIn;               /* Argument to xTask */
+		void *pResult;           /* Result of xTask */
+	};
+
+	trusted {
+        /* define ECALLs here. */
+
+		public int sqlite3_prepare_v2(
+		[user_check] sqlite3 *db,            /* Database handle */
+		[in, string] const char *zSql,       /* SQL statement, UTF-8 encoded */
+		int nByte,              /* Maximum length of zSql in bytes. */
+		[in, count=1] sqlite3 **ppStmt,  /* OUT: Statement handle */
+		  [user_check] char **pzTail     /* OUT: Pointer to unused portion of zSql */
+		  );
+
+		public int sqlite3_open(
+			[in, string]const char *filename,   /* Database filename (UTF-8) */
+			[out, count=1]sqlite3 **ppDb        /* OUT: SQLite db handle */
+		);
+
+		public int sqlite3_open_v2(
+		  [in, string] const char *filename,   /* Database filename (UTF-8) */
+		  [out, count=1] sqlite3 **ppDb,         /* OUT: SQLite db handle */
+		  int flags,              /* Flags */
+		  [in, string] const char *zVfs        /* Name of VFS module to use */
+		);
+
+		public void *vdbeIncrPopulateThread([in, sizefunc=getIncrMergerSize] void *pCtx);
+		public void *vdbeSorterFlushThread([in, sizefunc=getSortSubtaskSize] void *pCtx);
+		public void *vdbePmaReaderBgIncrInit([in, sizefunc=getPmaReaderSize] void *pCtx);
+
+		public char *sqlite3_libversion(void);
+		public char *sqlite3_sourceid(void);
+		public int sqlite3_libversion_number(void);
+		public int sqlite3_threadsafe(void);
+
+		public int sqlite3_close([in] sqlite3* db);
+		public int sqlite3_close_v2([in] sqlite3* db);
+
+		public int sqlite3_initialize(void);
+		public int sqlite3_shutdown(void);
+
+		/* public int sqlite3_exec(); */
+
+		public int sqlite3_extended_result_codes([in] sqlite3* db, int onoff);
+		public long long sqlite3_last_insert_rowid([in] sqlite3* db);
+		public int sqlite3_changes([in]sqlite3* db);
+		public int sqlite3_total_changes([in]sqlite3* db);
+		public void sqlite3_interrupt([in] sqlite3* db);
+
+		public int sqlite3_complete([in, string] const char *sql);
+		public int sqlite3_complete16([in, wstring] const char *sql);
+
+		public int sqlite3_busy_timeout([in] sqlite3* db, int msec);
+
+		/* public int sqlite3_get_table(); */
+
+		/* public void sqlite3_free_table([in, count=1, string]char **result); */
+
+		public long long sqlite3_memory_used(void);
+		public long long sqlite3_memory_highwater(int resetFlag);
+
+		public void sqlite3_randomness(int N, [out, size=N]void *P);
+
+		/*public char *sqlite3_uri_parameter([in, string] const char *zFilename, [in, string] const char *zParam);
+		public int sqlite3_uri_boolean([in, string] const char *zFile, [in, string] const char *zParam, int bDefault);*/
+		public long long sqlite3_uri_int64([in, string]const char* zFilename, [in, string] const char* zParam, long long bDflt);
+
+		public int sqlite3_errcode([in] sqlite3 *db);
+		public int sqlite3_extended_errcode([in] sqlite3 *db);
+		public char *sqlite3_errmsg([in] sqlite3* db);
+		public void *sqlite3_errmsg16([in] sqlite3* db);
+		public char *sqlite3_errstr(int rc);
+
+		public int sqlite3_limit([in] sqlite3* db, int id, int newVal);
+		
+		public int sqlite3_prepare(
+		  [in] sqlite3 *db,            /* Database handle */
+		  [in, string] const char *zSql,       /* SQL statement, UTF-8 encoded */
+		  int nByte,              /* Maximum length of zSql in bytes. */
+		  [user_check] sqlite3_stmt **ppStmt,  /* OUT: Statement handle */
+		  [out, count=1] char **pzTail     /* OUT: Pointer to unused portion of zSql */
+		);
+
+		public char *sqlite3_sql([user_check] sqlite3_stmt *pStmt);
+		public int sqlite3_stmt_readonly([user_check] sqlite3_stmt *pStmt);
+		public int sqlite3_stmt_busy([user_check] sqlite3_stmt* pStmt);
+
+		public int sqlite3_bind_double([user_check] sqlite3_stmt *pStmt, int i, double rValue);
+		public int sqlite3_bind_int([user_check] sqlite3_stmt *p, int i, int iValue);
+		public int sqlite3_bind_int64([user_check] sqlite3_stmt *pStmt, int i, sqlite_int64 iValue);
+		public int sqlite3_bind_null([user_check] sqlite3_stmt *pStmt, int i);
+		public int sqlite3_bind_value([user_check] sqlite3_stmt *pStmt, int i, [in] const sqlite3_value *pValue);
+		public int sqlite3_bind_zeroblob([user_check] sqlite3_stmt *pStmt, int i, int n);
+		public int sqlite3_bind_zeroblob64([user_check] sqlite3_stmt *pStmt, int i, sqlite3_uint64 n);
+		public int sqlite3_bind_parameter_count([user_check] sqlite3_stmt* pStmt);
+		public char *sqlite3_bind_parameter_name([user_check] sqlite3_stmt *pStmt, int i);
+		public int sqlite3_bind_parameter_index([user_check] sqlite3_stmt *pStmt, [in, string] const char *zName);
+		public int sqlite3_clear_bindings([user_check] sqlite3_stmt* pStmt);
+		public int sqlite3_column_count([user_check] sqlite3_stmt *pStmt);
+		public char *sqlite3_column_name([user_check] sqlite3_stmt *pStmt, int N);
+		public void *sqlite3_column_name16([user_check] sqlite3_stmt *pStmt, int N);
+
+		public char *sqlite3_column_database_name([user_check]sqlite3_stmt* pStmt,int N);
+		public void *sqlite3_column_database_name16([user_check]sqlite3_stmt* pStmt,int N);
+		public char *sqlite3_column_table_name([user_check]sqlite3_stmt* pStmt,int N);
+		public void *sqlite3_column_table_name16([user_check]sqlite3_stmt* pStmt,int N);
+		public char *sqlite3_column_origin_name([user_check]sqlite3_stmt* pStmt,int N);
+		public void *sqlite3_column_origin_name16([user_check]sqlite3_stmt* pStmt,int N);
+
+		public void *sqlite3_aggregate_context([user_check] sqlite3_context* p, int nBytes);
+
+		public int sqlite3_step([user_check] sqlite3_stmt *pStmt);
+		public void *sqlite3_column_blob([user_check] sqlite3_stmt* pStmt, int iCol);
+		public int sqlite3_column_bytes([user_check] sqlite3_stmt* pStmt, int iCol);
+		public int sqlite3_column_bytes16([user_check] sqlite3_stmt* pStmt, int iCol);
+		public double sqlite3_column_double([user_check] sqlite3_stmt* pStmt, int iCol);
+		public int sqlite3_column_int([user_check] sqlite3_stmt* pStmt, int iCol);
+		public sqlite3_int64 sqlite3_column_int64([user_check] sqlite3_stmt* pStmt,  int iCol);
+		public unsigned char *sqlite3_column_text([user_check] sqlite3_stmt* pStmt, int iCol);
+		public void *sqlite3_column_text16([user_check] sqlite3_stmt* pStmt, int iCol);
+		public int sqlite3_column_type([user_check] sqlite3_stmt* pStmt, int iCol);
+		public sqlite3_value *sqlite3_column_value([user_check] sqlite3_stmt* pStmt, int iCol);
+
+		public int sqlite3_finalize([user_check] sqlite3_stmt *pStmt);
+
+
+
+    };
+
+    untrusted {
+        /* define OCALLs here. */
+
+		void sqlite3_printf([in, string] char* log);
+
+		int sqlite3OsInit(void);
+
+		int sqlite3OsSleep([in] sqlite3_vfs *pVfs, int nMicro);
+
+		/* struct tm *ocall_localtime([out] time_t *t); */
+
+		int sqlite3_os_end(void);
+
+		void sqlite3_win32_sleep(unsigned long milliseconds);
+
+		int ocall_vdbeSorterCreateThread(
+  [in, count=1, sizefunc=getSQLiteThreadSize] SQLiteThread **pThread,             /* Thread will use this task object */
+  [in, sizefunc=getIncrMergerSize] void *pIn                      /* Argument passed into xTask() */
+);
+
+		int ocall_vdbeSorterCreateThread_flushThr(
+  [in] SQLiteThread **pThread,             /* Thread will use this task object */
+  [in, sizefunc=getSortSubtaskSize] void *pIn                      /* Argument passed into xTask() */
+);
+
+	int ocall_vdbeSorterCreateThread_PmaReader(
+  [in] SQLiteThread **pThread,             /* Thread will use this task object */
+  [in, sizefunc=getPmaReaderSize] void *pIn                      /* Argument passed into xTask() */
+);
+
+	int sqlite3OsWrite([in, size=72] sqlite3_file *id, 
+					   [in, size=buf_size] const void *pBuf, 
+					   int buf_size, 
+					   long long offset);
+
+	int sqlite3OsRead([in, size=72] sqlite3_file *id, 
+						[in, size=buf_size] void *pBuf, 
+						int buf_size, 
+						long long offset);
+
+	int sqlite3OsTruncate([in, size=72] sqlite3_file *id, 
+							long long size);
+
+	int sqlite3OsFileSize([in, size=72] sqlite3_file *id, 
+							[out] long long *pSize);
+
+	int sqlite3OsFileControl([in, size=72] sqlite3_file *id, 
+								int op, 
+								[in, size=arg_size] void *pArg,
+								int arg_size);
+
+	int sqlite3OsFullPathname( [in] sqlite3_vfs *pVfs,
+								[in, string] const char *zPath,
+								int nPathOut,
+								[out, size=buf_size] char *zPathOut,
+								int buf_size);
+	
+	int sqlite3_vfs_register([in] sqlite3_vfs *pVfs, int makeDflt);
+
+	int sqlite3_vfs_unregister([in] sqlite3_vfs *pVfs);
+
+	int sqlite3OsSync([in, size=72] sqlite3_file *id, int flags);
+		    
+	int sqlite3OsLock([in, size=72] sqlite3_file *id, int lockType);
+
+	int sqlite3OsUnlock([in, size=72] sqlite3_file *id, int lockType);
+
+	int sqlite3OsCheckReservedLock([in, size=72] sqlite3_file *id, 
+									[in] int *pResOut);
+
+	/* void sqlite3OsFileControlHint([in, size=72] sqlite3_file *id, 
+									int op, 
+									[in, size=arg_size] void *pArg,
+									int arg_size);*/
+
+	int sqlite3OsSectorSize([in, size=72] sqlite3_file *id);
+
+	int sqlite3OsDeviceCharacteristics([in, size=72] sqlite3_file *id);
+
+	int sqlite3OsFetch([in, size=72] sqlite3_file *id, 
+						long long iOff, 
+						int iAmt, 
+						[in, out, count=1, size=iAmt] void **pp);
+
+	int sqlite3OsUnfetch([in, size=72] sqlite3_file *id, 
+							long long iOff, 
+							[in, size=arg_size] void *p,
+							int arg_size);
+
+	int sqlite3OsOpen(
+  [in] sqlite3_vfs *pVfs,
+  [in, string] const char *zPath,
+  [in, size=72] sqlite3_file *pFile,
+  int flags,
+  [out] int *pFlagsOut
+);
+
+	int sqlite3OsDelete([in] sqlite3_vfs *pVfs, 
+						[in, string] const char *zPath, 
+						int dirSync);
+
+	int sqlite3OsAccess(
+  [in] sqlite3_vfs *pVfs,
+  [in, string] const char *zPath,
+  int flags,
+  [out] int *pResOut
+);
+
+	int sqlite3OsRandomness([in] sqlite3_vfs *pVfs, 
+							int nByte, 
+							[out, size=nByte] char *zBufOut);
+
+	int sqlite3OsCurrentTimeInt64([in] sqlite3_vfs *pVfs, 
+									[out] sqlite3_int64 *pTimeOut);
+
+	int sqlite3OsOpenMalloc(
+  [in] sqlite3_vfs *pVfs,
+  [in, string] const char *zFile,
+  [in, count=1, size=72] sqlite3_file **ppFile,
+  int flags,
+  [out] int *pOutFlags
+);
+
+	int sqlite3OsCloseFree([in, size=72] sqlite3_file *pFile);
+
+	int sqlite3OsShmMap(
+  [in, size=72] sqlite3_file *id,               /* Database file handle */
+  int iPage,
+  int pgsz,
+  int bExtend,                    /* True to extend file if necessary */
+ [out, count=1, size=pgsz] void **pp              /* OUT: Pointer to mapping */
+);
+
+	int sqlite3OsShmLock([in, size=72] sqlite3_file *id, 
+							int offset, 
+							int n, 
+							int flags);
+
+	void sqlite3OsShmBarrier([in, size=72] sqlite3_file *id);
+
+	int sqlite3OsShmUnmap([in, size=72] sqlite3_file *id, 
+							int deleteFlag);
+
+	int sqlite3LoadExtension(
+  [in] sqlite3 *db,          /* Load the extension into this database connection */
+  [in, string]const char *zFile,    /* Name of the shared library containing extension */
+  [in, string]const char *zProc,    /* Entry point.  Use "sqlite3_extension_init" if 0 */
+  [out, count=1, size=buf_size]char **pzErrMsg,       /* Put error message here if not 0 */
+  int buf_size
+);
+
+void sqlite3CloseExtensions([in]sqlite3 *db);
+int sqlite3OsClose([in, size=72] sqlite3_file *pId);
+int get_sqlite3JournalSize();
+int getMxPathName();
+
+    };
+
+	
+
+	
+};
